@@ -11,7 +11,10 @@ struct CardView: View {
     
     // MARK: - PROPERTIES
     let card: Card
-    var removal: (() -> Void)? = nil
+    // Removed for Challenge 17-3
+    // var removal: (() -> Void)? = nil
+    // Added for Challenge 17-3
+    var removal: ((Bool) -> Void)? = nil
     
     @State private var feedback = UINotificationFeedbackGenerator()
     
@@ -33,7 +36,8 @@ struct CardView: View {
                     differentiateWithoutColor
                     ? nil
                     : RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(offset.width > 0 ? .green : .red)
+                        // Added extra ternary operator to .white for Challenge 17.2
+                        .fill(offset.width == 0 ? .white: offset.width > 0 ? .green : .red)
                 )
                 .shadow(radius: 10)
             
@@ -72,11 +76,14 @@ struct CardView: View {
                     if abs(offset.width) > 100 {
                         if offset.width > 0 {
                             feedback.notificationOccurred(.success)
+                            // Added for Challenge 17-3
+                            removal?(false)
                         } else {
                             feedback.notificationOccurred(.error)
+                            removal?(true)
+                            // Added for Challenge 17-3
+                            offset = .zero
                         }
-                        
-                        removal?()
                     } else {
                         offset = .zero
                     }

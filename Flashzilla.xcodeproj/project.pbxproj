@@ -14,6 +14,8 @@
 		C3673A322848151300AB7B7B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3673A312848151300AB7B7B /* Card.swift */; };
 		C3673A37284815D800AB7B7B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3673A36284815D800AB7B7B /* CardView.swift */; };
 		C3673A392848C42800AB7B7B /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3673A382848C42800AB7B7B /* EditCards.swift */; };
+		C3673A3B284AB55400AB7B7B /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3673A3A284AB55300AB7B7B /* FileManager-DocumentsDirectory.swift */; };
+		C3673A3E284AB68A00AB7B7B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3673A3D284AB68A00AB7B7B /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		C3673A312848151300AB7B7B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C3673A36284815D800AB7B7B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C3673A382848C42800AB7B7B /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		C3673A3A284AB55300AB7B7B /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
+		C3673A3D284AB68A00AB7B7B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 				C3673A342848154300AB7B7B /* Views */,
 				C3673A332848151700AB7B7B /* Models */,
 				C3673A35284815B900AB7B7B /* View Models */,
+				C3673A3C284AB55A00AB7B7B /* Helpers */,
 				C3673A27284814A300AB7B7B /* Assets.xcassets */,
 				C3673A29284814A300AB7B7B /* Preview Content */,
 			);
@@ -98,6 +103,15 @@
 				C3673A36284815D800AB7B7B /* CardView.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		C3673A3C284AB55A00AB7B7B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C3673A3A284AB55300AB7B7B /* FileManager-DocumentsDirectory.swift */,
+				C3673A3D284AB68A00AB7B7B /* DataManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3673A3B284AB55400AB7B7B /* FileManager-DocumentsDirectory.swift in Sources */,
 				C3673A26284814A300AB7B7B /* ContentView.swift in Sources */,
 				C3673A392848C42800AB7B7B /* EditCards.swift in Sources */,
+				C3673A3E284AB68A00AB7B7B /* DataManager.swift in Sources */,
 				C3673A322848151300AB7B7B /* Card.swift in Sources */,
 				C3673A37284815D800AB7B7B /* CardView.swift in Sources */,
 				C3673A24284814A300AB7B7B /* FlashzillaApp.swift in Sources */,

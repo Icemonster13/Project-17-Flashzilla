@@ -11,7 +11,10 @@ struct EditCards: View {
     
     // MARK: - PROPERTIES
     @Environment(\.dismiss) var dismiss
-    @State private var cards = [Card]()
+    // Removed for Challenge 17-4 and 17-5
+    // @State private var cards = [Card]()
+    // Added for Challenge 17-4 and 17-5
+    @State private var cards = DataManager.load()
     @State private var newPrompt = ""
     @State private var newAnswer = ""
     
@@ -43,7 +46,8 @@ struct EditCards: View {
                 Button("Done", action: done)
             }
             .listStyle(.grouped)
-            .onAppear(perform: loadData)
+            // Removed for Challenge 17-4 and 17-5
+            // .onAppear(perform: loadData)
         }
     }
     
@@ -52,19 +56,20 @@ struct EditCards: View {
         dismiss()
     }
     
-    func loadData() {
-        if let data = UserDefaults.standard.data(forKey: "Cards") {
-            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                cards = decoded
-            }
-        }
-    }
+    // Removed for Challenge 17-4 and 17-5
+    // func loadData() {
+    //     if let data = UserDefaults.standard.data(forKey: "Cards") {
+    //         if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
+    //             cards = decoded
+    //         }
+    //     }
+    // }
     
-    func saveData() {
-        if let data = try? JSONEncoder().encode(cards) {
-            UserDefaults.standard.set(data, forKey: "Cards")
-        }
-    }
+    // func saveData() {
+    //     if let data = try? JSONEncoder().encode(cards) {
+    //         UserDefaults.standard.set(data, forKey: "Cards")
+    //     }
+    // }
     
     func addCard() {
         let trimmedPrompt = newPrompt.trimmingCharacters(in: .whitespaces)
@@ -73,12 +78,21 @@ struct EditCards: View {
         
         let card = Card(prompt: trimmedPrompt, answer: trimmedAnswer)
         cards.insert(card, at: 0)
-        saveData()
+        // Removed for Challenge 17-4 and 17-5
+        // saveData()
+        // Added for Challenge 17-4 and 17-5
+        DataManager.save(cards)
+        // Added for Challenge 17-1
+        newPrompt = ""
+        newAnswer = ""
     }
     
     func removeCards(at offsets: IndexSet) {
         cards.remove(atOffsets: offsets)
-        saveData()
+        // Removed for Challenge 17-4 and 17-5
+        // saveData()
+        // Added for Challenge 17-4 and 17-5
+        DataManager.save(cards)
     }
 }
 

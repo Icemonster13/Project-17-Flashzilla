@@ -7,9 +7,14 @@
 
 import SwiftUI
 
-struct Card: Codable {
+// Removed for Challenge 17-3
+// struct Card: Codable {
+// Added for Challenge 17-3
+struct Card: Codable, Identifiable, Hashable {
     
     // MARK: - PROPERTIES
+    // Added id for Challenge 17-3
+    var id = UUID()
     let prompt: String
     let answer: String
     
